@@ -11,7 +11,7 @@ output:
 
 ## Background:
 
-Understanding snowmelt runoff is crucial for managing water resources and assessing flood risks, as it plays a significant role in the hydrologic cycle. Annual runoff and peak flow are influenced by snowmelt, rainfall, or a combination of both. In regions with a snowmelt-driven hydrologic cycle, such as the Rocky Mountains, snowpack acts as a natural reservoir, storing water during the winter months and releasing it gradually during the spring and early summer, thereby playing a vital role in maintaining water availability for various uses downstream.  By examining how snowmelt interacts with other factors like precipitation, land cover, and temperature, we can better anticipate water supply fluctuations and design effective flood management strategies.
+Understanding snowmelt runoff is crucial for managing water resources and assessing flood risks, as it plays a significant role in the hydrologic cycle. Annual runoff and peak flow are influenced by snowmelt, rainfall, or a combination of both. In regions with a snowmelt-driven hydrologic cycle, such as the Rocky Mountains, snowpack acts as a natural reservoir, storing water during the winter months and releasing it gradually during the spring and early summer, thereby playing a vital role in maintaining water availability for various uses downstream. By examining how snowmelt interacts with other factors like precipitation, land cover, and temperature, we can better anticipate water supply fluctuations and design effective flood management strategies.
 
 Learning objectives: 
 
@@ -29,7 +29,7 @@ Similar to the model development structure we discussed in the last module, snow
 These models use historical data and statistical techniques to predict runoff based on the relationship between snow characteristics (like snow area) and runoff. They use past patterns to make predictions about the future. The emergence of data-driven models has benefited from the growth of massive data and the rapid increase in computational power. These models simulate the changes in snowmelt runoff using machine learning algorithms to select appropriate parameters (e.g., daily rainfall, temperature, solar radiation, snow area, and snow water equivalent) from different data sources.
 
 **Conceptual Models:** 
-These models simplify the snowmelt process by establishing a simple, rule-based relationship between snowmelt and temperature. These models use a basic formula based on temperature to estimate how much snow will melt.
+Conceptual models simplify the snowmelt process by establishing a simple, rule-based relationship between snowmelt and temperature. These models use a basic formula based on temperature to estimate how much snow will melt.
           
 **Physical Models:** 
 The physical snowmelt models calculate snowmelt based on the energy balance of snow cover. If all the heat fluxes toward the snowpack are considered positive and those away are considered negative, the sum of these fluxes is equal to the change in heat content of the snowpack for a given time period. Fluxes considered may be
@@ -94,7 +94,7 @@ In this module, we will simulate snowmelt in a montane watershed in central Colo
 
 
 
-Question 1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?
+**Q1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?**
 
 ANSWER: 
 
@@ -200,7 +200,7 @@ sntl <- sntl %>%
   mutate(date = lubridate::ymd(date))
 ```
 
-Question 2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).
+**Q2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).**
 
 ANSWER:
 
@@ -245,13 +245,9 @@ print(max(sntl$cum_input.mm, na.rm = TRUE))
 print(max(sntl$pcumul.mm, na.rm = TRUE ))
 ```
 
-Question 3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)
+**Q3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)**
 
 ANSWER: 
-
-
-
-
 
 ## Modeling SWE 
 Let's assume that we have a precipitation gage at 3400m in Fool Creek, but without SWE data, how could we model SWE using temperature? 
@@ -573,32 +569,20 @@ print(param_lfc[1, ])
 print(paste('The estimated threshold temperature distinguishing rain from snow in Lower Fool is ', round(param_lfc[1, 2], 2), 'degrees and in Upper Fool Creek is', round(param[1, 2],2), 'degrees'))
 ```
 
-Question 3: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2pnts)
+**Q4: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2pnts)**
 
 ANSWER: 
 
 
-
-
-
-Question 4: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2pnts) 
+**Q5: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2pnts)** 
 
 ANSWER
 
-
-
-
-
-
-Question 4: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).
+**Q6: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).**
 
 ANSWER:
 
-
-
-
-
-Question 5: Let's say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).
+**Q7: Let's say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).**
 
 ANSWER:
 
